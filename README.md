@@ -1,2 +1,2 @@
 # hpclab
-the codes and programs for the High Performance Computing Lab at IIITDM Kancheepuram
+The codes and programs made in the High Performance Computing Lab at IIITDM Kancheepuram
