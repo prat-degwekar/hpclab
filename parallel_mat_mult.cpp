@@ -40,7 +40,7 @@ int main()
 
 		for (int i = 0; i < 100; i++)
     	{
-    		#pragma omp parallel for num_threads(timez[J])
+    		//#pragma omp parallel for num_threads(timez[J])
 
     	    for (int j = 0; j < 100; j++)
     	    {
