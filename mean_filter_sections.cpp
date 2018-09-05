@@ -99,7 +99,7 @@ int main()
         		for(int j=1; j<511; j++)
         		{
 
-                	temp = green[i-1][j] + green[i-1][j-1] + green[i-1][j+1];
+                	int temp = green[i-1][j] + green[i-1][j-1] + green[i-1][j+1];
                 	temp += green[i][j-1] + green[i][j] + green[i][j+1];
                 	temp += green[i+1][j-1] + green[i+1][j] + green[i+1][j+1];
                 	temp /= 9;
@@ -115,7 +115,7 @@ int main()
         		for(int j=1; j<511; j++)
         		{
 
-                	temp = blue[i-1][j] + blue[i-1][j-1] + blue[i-1][j+1];
+                	int temp = blue[i-1][j] + blue[i-1][j-1] + blue[i-1][j+1];
                 	temp += blue[i][j-1] + blue[i][j] + blue[i][j+1];
 	                temp += blue[i+1][j-1] + blue[i+1][j] + blue[i+1][j+1];
                 	temp /= 9;
