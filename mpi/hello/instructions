@@ -1,0 +1,6 @@
+mpicc -o HW file.c
+// now HW is the required object file
+
+qsub submit.sh
+
+// to check job, qstat or qstat -a
