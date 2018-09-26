@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 {
         int myid, numprocs;
         int i, x, low, high;
-        float data[MAXSIZE], result=0, myresult=0, mymin = INT_MAX, min = INT_MAX;
+        float data[MAXSIZE], result=0, myresult=0, mymax = 0, max = 0;
         char fn[255];
         FILE *fp;
 
@@ -40,18 +40,18 @@ int main(int argc, char **argv)
         high = low + x;
         for(i=low; i<high; i++) {
                 //myresult += data[i];
-                if(data[i]<mymin)
+                if(data[i]>mymax)
                 {
-                    mymin = data[i];
+                    mymax = data[i];
                 }
         }
-        printf("I got %f from %d\n", mymin, myid);
+        printf("I got %f from %d\n", mymax, myid);
 
         /* compute global sum */
-        MPI_Reduce(&mymin, &min, 1, MPI_FLOAT, MPI_MIN, 0, MPI_COMM_WORLD);
+        MPI_Reduce(&mymax, &max, 1, MPI_FLOAT, MPI_MAX, 0, MPI_COMM_WORLD);
 
         if(0 == myid) {
-                printf("The min is %f.\n", min);
+                printf("The max is %f.\n", max);
         }
 
         MPI_Finalize();
